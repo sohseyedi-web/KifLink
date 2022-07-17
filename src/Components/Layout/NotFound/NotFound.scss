@@ -1,0 +1,32 @@
+.not {
+  display: grid;
+  place-items: center;
+  padding: 10rem;
+
+  &-title {
+    font-size: 6rem;
+    color: #ff8e3c;
+  }
+  &-subtitle {
+    font-size: 1.5rem;
+    color: #252525;
+  }
+  a {
+    color: #fffffe;
+    background-color: #d9376e;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    width: 15%;
+    margin: 1rem auto;
+    text-align: center;
+    font-size: 1.5rem;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      background-color: #fffffe;
+      color: #d9376e;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+}
