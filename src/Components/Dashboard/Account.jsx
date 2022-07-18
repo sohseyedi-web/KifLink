@@ -1,9 +1,16 @@
 import React from 'react'
 import Container from '../../Container/Container'
+import TopSide from './TopSide/TopSide';
+import BottomSide from './BottomSide/BottomSide';
 
 const Account = () => {
   return (
-    <Container>Account</Container>
+    <Container>
+      <div className="container">
+        <TopSide/>
+        <BottomSide/>
+      </div>
+    </Container>
   )
 }
 

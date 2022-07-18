@@ -1,0 +1,60 @@
+import { useDispatch, useSelector } from "react-redux";
+import { FiEdit2, FiTrash, FiCheck } from "react-icons/fi";
+import github from "../../../../Assets/github.svg";
+import linkedin from "../../../../Assets/linkedin.svg";
+import instagram from "../../../../Assets/instagram.svg";
+import facebook from "../../../../Assets/facebook.svg";
+import "./TodoList.scss";
+import { removeItem, completeItem } from "../../../../Store/action/kif-action";
+
+// const imgProfile = [
+//   { id: 1, src: github, name: "Github" },
+//   { id: 2, src: linkedin, name: "Linkedin" },
+//   { id: 3, src: instagram, name: "Instagram" },
+//   { id: 4, src: facebook, name: "Facebook" },
+// ];
+
+const imgProfile = { github, linkedin, instagram, facebook };
+
+const TodoList = () => {
+  const { todos } = useSelector((state) => state.kif);
+  const dispatch = useDispatch();
+
+  return (
+    <section className="lists">
+      {todos.map((todo) => (
+        <div className="lists-content" key={todo.id}>
+          <div className="lists-content__details ">
+            <div className="lists-content__details-img">
+              <img
+                src={todo.task.logo ? imgProfile.facebook : imgProfile.github}
+              />
+            </div>
+            <div className="lists-content__details-address">
+              {todo.task.path}
+            </div>
+          </div>
+          <div className="lists-content__action">
+            <span
+              className="lists-content__action-icon trash"
+              onClick={() => dispatch(removeItem(todo))}
+            >
+              <FiTrash size={28} />
+            </span>
+            <span className="lists-content__action-icon edit">
+              <FiEdit2 size={28} />
+            </span>
+            <span
+              className="lists-content__action-icon"
+              onClick={() => dispatch(completeItem(todo))}
+            >
+              <FiCheck size={28} />
+            </span>
+          </div>
+        </div>
+      ))}
+    </section>
+  );
+};
+
+export default TodoList;

@@ -41,7 +41,7 @@ const Auth = () => {
     contnet: "";
     right: 0;
     bottom: -10%;
-    color: #efefef;
+    color: #d9376e;
     font-size: 1.1rem;
   `;
 
@@ -70,7 +70,7 @@ const Auth = () => {
               {...formik.getFieldProps("email")}
             />
             {formik.touched.email && formik.errors.email && (
-              <Error>{formik.errors.email}</Error>
+              <Error>!{formik.errors.email}</Error>
             )}
           </div>
           <div className="auth-container__box">
@@ -86,7 +86,7 @@ const Auth = () => {
               {...formik.getFieldProps("password")}
             />
             {formik.touched.password && formik.errors.password && (
-              <Error>{formik.errors.password}</Error>
+              <Error>!{formik.errors.password}</Error>
             )}
           </div>
           <button
