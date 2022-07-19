@@ -56,6 +56,10 @@ const InputForm = () => {
           <FiPlus />
         </button>
       </form>
+      <div className="form-details" dir="rtl">
+        <div className="form-details__completed">موارد تکمیل شده : 0</div>
+        <div className="form-details__links">لینک های ایجاد شده : 0</div>
+      </div>
     </section>
   );
 };

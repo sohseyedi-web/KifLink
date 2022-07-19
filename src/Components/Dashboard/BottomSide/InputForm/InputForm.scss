@@ -1,16 +1,19 @@
 .form {
-  padding: 3rem 0;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0.5rem;
+  position: relative;
+  padding: 0.7rem;
 
   &-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 60%;
-    margin: 0 auto;
-    position: relative;
-    padding: 0.7rem;
-    border-radius: 0.5rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
 
     input,
     select {
@@ -19,7 +22,6 @@
       outline: none;
       border: none;
       padding-left: 0.3rem;
-      cursor: pointer;
       background-color: #eee;
     }
     input {
@@ -27,7 +29,7 @@
     }
     select {
       width: 25%;
-
+      cursor: pointer;
       text-transform: capitalize;
 
       option {
@@ -37,13 +39,26 @@
     button {
       width: 5%;
       height: 35px;
-      border-radius:.5rem;
+      border-radius: 0.5rem;
       background-color: #ff8e3c;
       font-size: 1.5rem;
       border: none;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+  &-details {
+    width: 100%;
+    margin-top: 1.2rem;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    &__completed{
+      margin-left: 2rem;
     }
   }
 }
