@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addNewItem } from "../../../../Store/action/kif-action";
-import "./InputForm.scss";
+import './TopSide.scss';
+import { useState } from "react";
 import { FiPlus } from "react-icons/fi";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewItem } from "./../../../Store/action/kif-action";
 
 const options = [
   "github",
@@ -15,8 +15,10 @@ const options = [
   "twitter",
 ];
 
-const InputForm = () => {
+const TopSide = () => {
   const [todo, setTodo] = useState({ title: "", logo: "" });
+  const { todos } = useSelector((state) => state.kif);
+  const filterTodos = todos.filter((t) => t.completed === true);
   const dispatch = useDispatch();
 
   const changeHandler = (e) => {
@@ -57,11 +59,15 @@ const InputForm = () => {
         </button>
       </form>
       <div className="form-details" dir="rtl">
-        <div className="form-details__completed">موارد تکمیل شده : 0</div>
-        <div className="form-details__links">لینک های ایجاد شده : 0</div>
+        <div className="form-details__completed">
+          موارد تکمیل شده : {filterTodos.length}
+        </div>
+        <div className="form-details__links">
+          لینک های ایجاد شده : {todos.length}
+        </div>
       </div>
     </section>
   );
 };
 
-export default InputForm;
+export default TopSide;
