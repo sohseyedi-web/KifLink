@@ -1,9 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { FiEdit2, FiTrash, FiCheck } from "react-icons/fi";
-import github from "../../../../Assets/github.svg";
-import linkedin from "../../../../Assets/linkedin.svg";
-import instagram from "../../../../Assets/instagram.svg";
-import facebook from "../../../../Assets/facebook.svg";
+
 import "./TodoList.scss";
 import { removeItem, completeItem } from "../../../../Store/action/kif-action";
 
@@ -13,8 +10,6 @@ import { removeItem, completeItem } from "../../../../Store/action/kif-action";
 //   { id: 3, src: instagram, name: "Instagram" },
 //   { id: 4, src: facebook, name: "Facebook" },
 // ];
-
-const imgProfile = { github, linkedin, instagram, facebook };
 
 const TodoList = () => {
   const { todos } = useSelector((state) => state.kif);
@@ -26,9 +21,7 @@ const TodoList = () => {
         <div className="lists-content" key={todo.id}>
           <div className="lists-content__details ">
             <div className="lists-content__details-img">
-              <img
-                src={todo.task.logo ? imgProfile.facebook : imgProfile.github}
-              />
+              <img src={todo.task.logo} alt={todo.task.logo} />
             </div>
             <div className="lists-content__details-address">
               {todo.task.path}
