@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { completeItem, removeItem } from "../../../Store/action/kif-action";
 import TodoList from "./TodoList/TodoList";
 import styled from "styled-components";
-
+import "./BottomSide.scss";
 
 const BottomSide = () => {
   const { todos } = useSelector((state) => state.kif);

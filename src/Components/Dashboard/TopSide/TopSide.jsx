@@ -1,22 +1,24 @@
-import './TopSide.scss';
+import "./TopSide.scss";
 import { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewItem } from "./../../../Store/action/kif-action";
+import { Link } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
 
 const options = [
-  "github",
-  "linkedin",
-  "instagram",
-  "facebook",
-  "gmail",
-  "website",
-  "telegram",
-  "twitter",
+  "Github",
+  "Linkedin",
+  "Instagram",
+  "Facebook",
+  "Gmail",
+  "Portfolio",
+  "Telegram",
+  "Twitter",
 ];
 
 const TopSide = () => {
-  const [todo, setTodo] = useState({ title: "", logo: "" });
+  const [todo, setTodo] = useState({ title: "", logo: "", img: "" });
   const { todos } = useSelector((state) => state.kif);
   const filterTodos = todos.filter((t) => t.completed === true);
   const dispatch = useDispatch();
@@ -59,12 +61,24 @@ const TopSide = () => {
         </button>
       </form>
       <div className="form-details" dir="rtl">
-        <div className="form-details__completed">
-          موارد تکمیل شده : {filterTodos.length}
+        <div className="form-details__right">
+          <div className="form-details__right-completed">
+            موارد تکمیل شده : {filterTodos.length}
+          </div>
+          <div className="form-details__right-links">
+            لینک های ایجاد شده : {todos.length}
+          </div>
         </div>
-        <div className="form-details__links">
-          لینک های ایجاد شده : {todos.length}
-        </div>
+        <Link className="form-details__left" to={"/user"}>
+          {filterTodos.length > 0 && (
+            <>
+              کیف لینک
+              <span>
+                <FiArrowLeft />
+              </span>
+            </>
+          )}
+        </Link>
       </div>
     </section>
   );

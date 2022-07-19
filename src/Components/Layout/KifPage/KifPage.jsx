@@ -2,10 +2,11 @@ import "./KifPage.scss";
 import { FiLink } from "react-icons/fi";
 import User from "../../../Assets/Avatar.svg";
 import { Helmet } from "react-helmet";
+import { useSelector } from "react-redux";
 
 const KifPage = () => {
-
-  const showTodo = []
+  const { todos } = useSelector((state) => state.kif);
+  const showTodo = todos.filter((t) => t.completed === true);
 
   return (
     <>
@@ -29,11 +30,16 @@ const KifPage = () => {
                 alt={show.name}
               />
               <div className="list-content__box-name">
-                {show.name === "Gmail" ? show.path : show.name}
+                {show.task.logo === "Gmail" ? show.task.path : show.task.logo}
               </div>
               <a
-                href={show.name === "Gmail" ? false : `https://${show.path}`}
+                href={
+                  show.task.logo === "Gmail"
+                    ? false
+                    : `https://${show.task.path}`
+                }
                 target={"_blank"}
+                rel={"noreferrer"}
               >
                 <FiLink size={28} />
               </a>
