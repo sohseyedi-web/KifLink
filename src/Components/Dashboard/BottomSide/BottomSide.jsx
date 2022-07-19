@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { completeItem, removeItem } from "../../../Store/action/kif-action";
+import {
+  completeItem,
+  removeItem,
+  editItem,
+} from "../../../Store/action/kif-action";
 import TodoList from "./TodoList/TodoList";
 import styled from "styled-components";
 import "./BottomSide.scss";
@@ -16,6 +20,10 @@ const BottomSide = () => {
     width: 100%;
   `;
 
+  const editItemHandler = (id, updateTodo) => {
+    dispatch(editItem({ id, updateTodo }));
+  };
+
   return (
     <section className="lists">
       {todos.length === 0 ? (
@@ -27,6 +35,7 @@ const BottomSide = () => {
             todo={todo}
             onRemove={() => dispatch(removeItem(todo))}
             onCompleted={() => dispatch(completeItem(todo))}
+            onUpdated={editItemHandler}
           />
         ))
       )}
