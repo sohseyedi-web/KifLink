@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 const KifPage = () => {
   const { todos } = useSelector((state) => state.kif);
+  const { forms } = useSelector((state) => state.form);
   const showTodo = todos.filter((t) => t.completed === true);
 
   return (
@@ -17,10 +18,14 @@ const KifPage = () => {
         <div className="list-content">
           <div className="list-content__details">
             <img src={User} alt="" />
-            <div className="list-content__details-name">
-              <div>سهیل سیدی</div>
-              <div>فرانت اند دولوپر</div>
-            </div>
+            {forms.map((item) => (
+              <>
+                <div className="list-content__details-name">
+                  <div>{item.data.fullname}</div>
+                  <div>{item.data.jobs}</div>
+                </div>
+              </>
+            ))}
           </div>
           {showTodo.map((show) => (
             <div key={show.id} className="list-content__box">

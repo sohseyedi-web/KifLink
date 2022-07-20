@@ -7,6 +7,8 @@ import gmail from "../../../../Assets/gmail.svg";
 import portfolio from "../../../../Assets/computer.svg";
 import telegram from "../../../../Assets/telegram.svg";
 import twitter from "../../../../Assets/twitter.svg";
+import pinterest from "../../../../Assets/pinterest.svg";
+import youtube from "../../../../Assets/youtube.svg";
 import { useState } from "react";
 
 const imgProfile = [
@@ -18,6 +20,8 @@ const imgProfile = [
   { id: 6, src: portfolio, name: "Portfolio" },
   { id: 7, src: telegram, name: "Telegram" },
   { id: 8, src: twitter, name: "Twitter" },
+  { id: 9, src: pinterest, name: "Pinterest" },
+  { id: 10, src: youtube, name: "Youtube" },
 ];
 
 const TodoList = ({ todo, onRemove, onCompleted, onUpdated }) => {
@@ -53,7 +57,25 @@ const TodoList = ({ todo, onRemove, onCompleted, onUpdated }) => {
                 alt={imgProfile[imgFilter].name}
               />
             </div>
-            <div className="lists-content__details-address">{editTodo}</div>
+            <div className="lists-content__details-address">
+              {todo.task.logo === "Telegram"
+                ? `t.me/${editTodo}`
+                : editTodo && todo.task.logo === "Github"
+                ? `github.com/${editTodo}`
+                : editTodo && todo.task.logo === "Facebook"
+                ? `facebook.com/${editTodo}`
+                : editTodo && todo.task.logo === "Linkedin"
+                ? `linkedin.com/in/${editTodo}`
+                : editTodo && todo.task.logo === "Instagram"
+                ? `instagram.com/${editTodo}`
+                : editTodo && todo.task.logo === "Twitter"
+                ? `twitter.com/${editTodo}`
+                : editTodo && todo.task.logo === "Pinterest"
+                ? `pinterest.com/${editTodo}`
+                : editTodo && todo.task.logo === "Youtube"
+                ? `youtube.com/${editTodo}`
+                : editTodo}
+            </div>
           </div>
           <div className="lists-content__action">
             <span

@@ -15,6 +15,8 @@ const options = [
   "Portfolio",
   "Telegram",
   "Twitter",
+  "Pinterest",
+  "Youtube",
 ];
 
 const TopSide = () => {
@@ -52,7 +54,7 @@ const TopSide = () => {
           type="text"
           name="path"
           id="path"
-          placeholder="link ..."
+          placeholder="Username..."
           value={todo.path}
           onChange={changeHandler}
         />

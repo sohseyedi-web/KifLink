@@ -1,7 +1,11 @@
 import "./Navbar.scss";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [user, setUser] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <nav className="navs" dir="rtl">
       <div className="container">
@@ -19,7 +23,33 @@ const Navbar = () => {
             </svg>
             <h1 className="navs-container__logo-title">کیفلینک</h1>
           </div>
-          <Link to={"/auth"} className="navs-container__account">ورود به کیف</Link>
+          {user ? (
+            <Link to={"/auth"} className="navs-container__account">
+              ورود به کیف
+            </Link>
+          ) : (
+            <div className="navs-container__dropdown">
+              <div
+                className="navs-container__dropdown-btn"
+                onClick={(e) => setIsActive(!isActive)}
+              >
+                خوش اومدی
+              </div>
+              {isActive && (
+                <div className="navs-container__dropdown-content">
+                  <Link
+                    to={"/edit"}
+                    className="navs-container__dropdown-content__item"
+                  >
+                    ویرایش اطلاعات
+                  </Link>
+                  <div className="navs-container__dropdown-content__item">
+                    خروج
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </nav>

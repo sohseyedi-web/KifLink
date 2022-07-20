@@ -20,18 +20,65 @@
       }
     }
     &__account {
-      padding: 0.5rem 1.5rem;
+      width: 150px;
+      padding: 0.5rem 0;
       border-radius: 0.5rem;
       color: #252525;
       background-color: #ff8e3c;
       text-decoration: none;
       font-weight: 500;
       transition: all 0.4s ease-in-out;
+      text-align: center;
+      font-size: 1.1rem;
 
       &:hover {
         background-color: #252525;
         color: #ff8e3c;
         transition: all 0.4s ease-in-out;
+      }
+    }
+    &__dropdown {
+      width: 150px;
+      position: relative;
+
+      &-btn {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        color: #252525;
+        background-color: #ff8e3c;
+        cursor: pointer;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: all 0.4s ease-in-out;
+      }
+      &-content {
+        position: absolute;
+        text-align: center;
+        content: "";
+        width: 100%;
+        background-color: #ff8e3c;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        padding: 0.5rem;
+        font-weight: 500;
+        font-size: 1.1rem;
+        top: 110%;
+        transition: all 0.4s ease-in-out;
+
+        &__item {
+          text-decoration: none;
+          color: inherit;
+          margin: 0.5rem 0;
+          cursor: pointer;
+          transition: all 0.4s ease-in-out;
+
+          &:hover {
+            transition: all 0.4s ease-in-out;
+            color: #fffffe;
+          }
+        }
       }
     }
   }

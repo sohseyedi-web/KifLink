@@ -1,0 +1,79 @@
+.edit {
+  padding: 5rem 0;
+  width: 35%;
+  margin: 0 auto;
+
+  &-wrap {
+    border-radius: 0.5rem;
+    padding: 1rem 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    &__box {
+      width: 100%;
+      position: relative;
+      margin-bottom: 2.5rem;
+
+      &-input {
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 0.5rem;
+        height: 40px;
+        padding: 0.2rem 0.5rem;
+        border: 2px solid #252525;
+        transition: border 0.4s ease-in-out;
+
+        &.input-user {
+          padding-left: 4rem;
+        }
+
+        &:focus {
+          border: 2px solid #d9376e;
+          transition: border 0.4s ease-in-out;
+        }
+      }
+
+      textarea {
+        resize: none;
+        height: 80px;
+      }
+      label {
+        position: absolute;
+        content: "";
+        left: 1%;
+        top: 20%;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+    }
+    &__btn {
+      width: 100%;
+
+      border: none;
+      width: 100%;
+      border-radius: 0.5rem;
+      color: #252525;
+      background-color: #ff8e3c;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1rem auto;
+      padding: 0.6rem 0;
+      transition: all 0.4s ease-in-out;
+
+      &.btn-dis {
+        opacity: 0.4;
+
+        &:hover {
+          color: #252525;
+          background-color: #ff8e3c;
+        }
+      }
+
+      &:hover {
+        transition: all 0.4s ease-in-out;
+        background-color: #252525;
+        color: #fffffe;
+      }
+    }
+  }
+}

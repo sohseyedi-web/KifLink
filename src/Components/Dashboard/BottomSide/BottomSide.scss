@@ -48,7 +48,7 @@
     &__action {
       color: inherit;
       &-icon {
-        margin-left: 1rem;
+        margin-left: 0.5rem;
         cursor: pointer;
         color: #252525;
 
@@ -57,6 +57,7 @@
         }
         &.edit {
           color: #25ce9e;
+          margin-left: 0.5rem;
         }
       }
     }
