@@ -20,8 +20,10 @@ const options = [
 ];
 
 const TopSide = () => {
-  const [todo, setTodo] = useState({ title: "", logo: "", img: "" });
   const { todos } = useSelector((state) => state.kif);
+  const { forms } = useSelector((state) => state.form);
+  const userName = forms[0].data.username;
+  const [todo, setTodo] = useState({ path: "", logo: "" });
   const filterTodos = todos.filter((t) => t.completed === true);
   const dispatch = useDispatch();
 
@@ -71,7 +73,7 @@ const TopSide = () => {
             لینک های ایجاد شده : {todos.length}
           </div>
         </div>
-        <Link className="form-details__left" to={"/user"}>
+        <Link className="form-details__left" to={`/${userName}`}>
           {filterTodos.length > 0 && (
             <>
               کیف لینک

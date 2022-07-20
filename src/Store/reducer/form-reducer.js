@@ -15,7 +15,7 @@ const formReducer = (state = initialState, action) => {
         createdAt: new Date().toISOString(),
       };
       const addNewItem = [...state.forms, newData];
-      localStorage.setItem("forms", JSON.stringify(state.forms));
+      localStorage.setItem("forms", JSON.stringify(addNewItem));
       return { ...state, forms: addNewItem };
     }
     default:

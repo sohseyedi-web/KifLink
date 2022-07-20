@@ -90,7 +90,10 @@ const TodoList = ({ todo, onRemove, onCompleted, onUpdated }) => {
             >
               <FiEdit2 size={28} />
             </span>
-            <span className="lists-content__action-icon" onClick={onCompleted}>
+            <span
+              className="lists-content__action-icon check"
+              onClick={onCompleted}
+            >
               <FiCheck size={28} />
             </span>
           </div>

@@ -4,7 +4,7 @@ import Auth from "./Components/Auth/Auth";
 import Account from "./Components/Dashboard/Account";
 import KifPage from "./Components/Layout/KifPage/KifPage";
 import NotFound from "./Components/Layout/NotFound/NotFound";
-import EditForm from './Components/Layout/EditForm/EditForm';
+import EditForm from "./Components/Layout/EditForm/EditForm";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/user" element={<KifPage />} />
+        <Route path="/:user" element={<KifPage />} />
         <Route path="/edit" element={<EditForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

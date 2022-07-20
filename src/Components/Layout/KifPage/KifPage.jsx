@@ -20,7 +20,7 @@ const KifPage = () => {
             <img src={User} alt="" />
             {forms.map((item) => (
               <>
-                <div className="list-content__details-name">
+                <div className="list-content__details-name" key={item.id}>
                   <div>{item.data.fullname}</div>
                   <div>{item.data.jobs}</div>
                 </div>
@@ -39,7 +39,23 @@ const KifPage = () => {
               </div>
               <a
                 href={
-                  show.task.logo === "Gmail"
+                  show.task.logo === "Telegram"
+                    ? `https://t.me/${show.task.path}`
+                    : show.task.path && show.task.logo === "Github"
+                    ? `https://github.com/${show.task.path}`
+                    : show.task.path && show.task.logo === "Facebook"
+                    ? `https://facebook.com/${show.task.path}`
+                    : show.task.path && show.task.logo === "Linkedin"
+                    ? `https://linkedin.com/in/${show.task.path}`
+                    : show.task.path && show.task.logo === "Instagram"
+                    ? `https://instagram.com/${show.task.path}`
+                    : show.task.path && show.task.logo === "Twitter"
+                    ? `https://twitter.com/${show.task.path}`
+                    : show.task.path && show.task.logo === "Pinterest"
+                    ? `https://pinterest.com/${show.task.path}`
+                    : show.task.path && show.task.logo === "Youtube"
+                    ? `https://youtube.com/${show.task.path}`
+                    : show.task.path && show.task.logo === "Gmail"
                     ? false
                     : `https://${show.task.path}`
                 }

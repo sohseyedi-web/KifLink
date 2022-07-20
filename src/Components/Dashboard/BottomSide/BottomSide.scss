@@ -101,11 +101,18 @@
       }
       &__action {
         width: 100%;
-        text-align: right;
+        text-align: left;
         &-icon {
-          margin-left: 0;
-          margin-right: 1rem;
+          margin: 0 1rem 0 0;
+
+          &.edit {
+            margin-left: 0rem;
+          }
         }
+      }
+      &__form {
+        position: relative;
+        width: 100%;
       }
     }
   }
