@@ -1,4 +1,5 @@
-import { FiEdit2, FiTrash, FiCheck } from "react-icons/fi";
+import { useState } from "react";
+import { FiEdit2, FiTrash, FiSave } from "react-icons/fi";
 import github from "../../../../Assets/github.svg";
 import linkedin from "../../../../Assets/linkedin.svg";
 import instagram from "../../../../Assets/instagram.svg";
@@ -9,7 +10,6 @@ import telegram from "../../../../Assets/telegram.svg";
 import twitter from "../../../../Assets/twitter.svg";
 import pinterest from "../../../../Assets/pinterest.svg";
 import youtube from "../../../../Assets/youtube.svg";
-import { useState } from "react";
 
 const imgProfile = [
   { id: 1, src: github, name: "Github" },
@@ -94,7 +94,7 @@ const TodoList = ({ todo, onRemove, onCompleted, onUpdated }) => {
               className="lists-content__action-icon check"
               onClick={onCompleted}
             >
-              <FiCheck size={28} />
+              <FiSave size={28} />
             </span>
           </div>
         </>

@@ -1,10 +1,10 @@
 import "./Auth.scss";
-import { FiTwitter, FiGithub, FiChrome, FiLock, FiMail } from "react-icons/fi";
-import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useFormik } from "formik";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Container from "../../Container/Container";
+import { FiTwitter, FiGithub, FiChrome, FiLock, FiMail } from "react-icons/fi";
 
 const initialValues = {
   email: "",
@@ -25,7 +25,7 @@ const Auth = () => {
 
   const onSubmit = (values) => {
     console.log(values);
-    navigate("/account");
+    navigate("/edit?redirect=account");
   };
 
   const formik = useFormik({
