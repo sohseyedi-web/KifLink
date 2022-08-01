@@ -25,7 +25,7 @@ const Auth = () => {
 
   const onSubmit = (values) => {
     console.log(values);
-    navigate("/edit?redirect=account");
+    navigate("/account");
   };
 
   const formik = useFormik({
@@ -68,6 +68,7 @@ const Auth = () => {
               autocomplete="off"
               placeholder="Example@gmail.com"
               {...formik.getFieldProps("email")}
+              required
             />
             {formik.touched.email && formik.errors.email && (
               <Error>!{formik.errors.email}</Error>
@@ -84,6 +85,7 @@ const Auth = () => {
               name="pass"
               placeholder="A-z"
               {...formik.getFieldProps("password")}
+              required
             />
             {formik.touched.password && formik.errors.password && (
               <Error>!{formik.errors.password}</Error>

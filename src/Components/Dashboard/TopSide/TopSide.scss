@@ -36,7 +36,7 @@
         text-transform: capitalize;
       }
     }
-    button {
+    &__btn {
       width: 5%;
       height: 35px;
       border-radius: 0.5rem;
@@ -46,7 +46,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &.btn-false:disabled{
+        background-color: #eee;
+        opacity: .5;
+        pointer-events: none;
+      }
     }
+    
   }
   &-details {
     width: 100%;

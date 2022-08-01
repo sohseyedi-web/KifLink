@@ -36,6 +36,7 @@ const BottomSide = () => {
             onRemove={() => dispatch(removeItem(todo))}
             onCompleted={() => dispatch(completeItem(todo))}
             onUpdated={editItemHandler}
+            todos={todos}
           />
         ))
       )}

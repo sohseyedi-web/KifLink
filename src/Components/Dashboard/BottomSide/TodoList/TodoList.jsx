@@ -1,31 +1,8 @@
 import { useState } from "react";
 import { FiEdit2, FiTrash, FiSave } from "react-icons/fi";
-import github from "../../../../Assets/github.svg";
-import linkedin from "../../../../Assets/linkedin.svg";
-import instagram from "../../../../Assets/instagram.svg";
-import facebook from "../../../../Assets/facebook.svg";
-import gmail from "../../../../Assets/gmail.svg";
-import portfolio from "../../../../Assets/computer.svg";
-import telegram from "../../../../Assets/telegram.svg";
-import twitter from "../../../../Assets/twitter.svg";
-import pinterest from "../../../../Assets/pinterest.svg";
-import youtube from "../../../../Assets/youtube.svg";
 
-const imgProfile = [
-  { id: 1, src: github, name: "Github" },
-  { id: 2, src: linkedin, name: "Linkedin" },
-  { id: 3, src: instagram, name: "Instagram" },
-  { id: 4, src: facebook, name: "Facebook" },
-  { id: 5, src: gmail, name: "Gmail" },
-  { id: 6, src: portfolio, name: "Portfolio" },
-  { id: 7, src: telegram, name: "Telegram" },
-  { id: 8, src: twitter, name: "Twitter" },
-  { id: 9, src: pinterest, name: "Pinterest" },
-  { id: 10, src: youtube, name: "Youtube" },
-];
 
-const TodoList = ({ todo, onRemove, onCompleted, onUpdated }) => {
-  const imgFilter = imgProfile.findIndex((i) => i.name === todo.task.logo);
+const TodoList = ({ todos, todo, onRemove, onCompleted, onUpdated }) => {
   const [isEdit, setIsEdit] = useState(false);
   const [editTodo, setEditTodo] = useState(todo.task.path);
 
@@ -51,11 +28,13 @@ const TodoList = ({ todo, onRemove, onCompleted, onUpdated }) => {
       ) : (
         <>
           <div className="lists-content__details">
-            <div className="lists-content__details-img">
-              <img
-                src={imgProfile[imgFilter].src}
-                alt={imgProfile[imgFilter].name}
-              />
+            <div
+              className="lists-content__details-number"
+              style={{
+                background: todo.completed ? "#25ce9e" : "#d9376e",
+              }}
+            >
+              {todo.completed ? "T" : "F"}
             </div>
             <div className="lists-content__details-address">
               {todo.task.logo === "Telegram"

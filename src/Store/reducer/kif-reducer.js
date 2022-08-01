@@ -40,6 +40,7 @@ const kifReducer = (state = initialState, action) => {
       const updateItem = { ...comItem[comItemIndex] };
       updateItem.completed = !updateItem.completed;
       comItem[comItemIndex] = updateItem;
+      localStorage.setItem("todos", JSON.stringify(comItem));
       return { ...state, todos: comItem };
     }
     case EDIT_ITEM: {
@@ -50,6 +51,7 @@ const kifReducer = (state = initialState, action) => {
       const updateTodo = { ...editTodo[itemIndex] };
       updateTodo.task.path = action.payload.updateTask;
       editTodo[itemIndex] = updateTodo;
+      localStorage.setItem("todos", JSON.stringify(editTodo));
       return { ...state, todos: editTodo };
     }
     default:

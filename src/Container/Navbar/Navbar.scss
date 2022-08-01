@@ -81,5 +81,26 @@
         }
       }
     }
+
+    @media screen and (max-width: 998px) {
+      &__logo {
+        &-title {
+          font-size: 1.3rem;
+          font-weight: 500;
+        }
+      }
+      &__account {
+        width: 120px;
+        font-size: 1rem;
+      }
+      &__dropdown {
+        width: 120px;
+
+        &-content,
+        &-btn {
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }

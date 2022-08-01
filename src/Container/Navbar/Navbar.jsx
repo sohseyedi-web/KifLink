@@ -23,7 +23,7 @@ const Navbar = () => {
             </svg>
             <h1 className="navs-container__logo-title">کیفلینک</h1>
           </div>
-          {user ? (
+          {!user ? (
             <Link to={"/auth"} className="navs-container__account">
               ورود به کیف
             </Link>
