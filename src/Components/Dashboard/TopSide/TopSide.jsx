@@ -129,10 +129,10 @@ const TopSide = ({ forms, todos }) => {
   const filterTodos = todos.filter((t) => t.completed === true);
   const dispatch = useDispatch();
 
-  const onSubmit = (values) => {
+  const onSubmit = (values, { resetForm }) => {
     dispatch(addNewItem(values));
+    resetForm({ values: "" });
   };
-
   const formik = useFormik({
     initialValues,
     onSubmit,
